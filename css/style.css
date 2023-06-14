@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    clear: both;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+@font-face {
+    font-family: "Gontserrat";
+    src: url("../fonts/Gontserrat.ttf");
+}
+@font-face {
+    font-family: "Fujimaru";
+    src: url("../fonts/Fujimaru.ttf");
+}
+@font-face {
+    font-family: "Yusei Magic";
+    src: url("../fonts/YuseiMagic.ttf");
+}
+.Gontserrat-font {
+    font-family: "Gontserrat";
+}
+.Fujimaru-font {
+    font-family: "Fujimaru";
+}
+.YuseiMagic-font {
+    font-family: "Yusei Magic";
+}
+
+body {
+    background: #121212;
+    color: white;
+}
+
+div.container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    min-height: 100vh;
+    background: rgba(0,0,0,.7);
+    backdrop-filter: blur(6px);
+    color: white;
+    padding: .5em;
+}
+section#score,
+section#desc,
+section#character-list,
+section#anime-recommmendations,
+section#gallery {
+    display: flex;
+    border: 1px solid #222;
+    padding: 1em 1.5em;
+    font-size: .8em;
+    background: #181818;
+    margin-bottom: .6em;
+}
+section#score {
+    justify-content: space-around;
+}
+section#score >  div:nth-child(1) {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: red; */
+}
+section#score >  div:nth-child(1) > h1#score-count {
+    font-size: 2.5em;
+    color: rgb(2, 216, 127);
+}
+section#score >  div:nth-child(2) {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: teal; */
+}
+section#score >  div:nth-child(2) > h1 > span {
+    font-size: 1.5em;
+    margin-left: .2em;
+}
+section#score >  div:nth-child(2) > h1:nth-child(1) > span {
+    color: yellow;
+}
+section#score >  div:nth-child(2) > h1:nth-child(2) > span {
+    color: rgb(102, 199, 17);
+}
+section#score >  div:nth-child(2) > h1:nth-child(3) > span {
+    color: rgb(255, 162, 0);
+}
+section#desc {
+    flex-direction: column;
+}
+section#desc > section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.2em;
+}
+section#desc > section > h1#heading {
+    font-size: 1.5em;
+    margin-bottom: .7em;
+}
+section#desc > section > div {
+    display: flex;
+    justify-content: space-between;
+}
+section#desc > section > div > figure {
+    margin: auto;
+    border: 1px solid #2f2f2f;
+    padding: 6px;
+}
+section#desc > section > div > figure > img {
+    height: 220px;
+}
+section#desc > section > div > div {
+    width: 80%;
+}
+section#desc > section > div > * {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+section#desc > section > div > div > p {
+    margin-bottom: 1em;
+}
+section#desc > section > ul > li {
+    list-style: none;
+    font-size: 1.2em;
+    padding-left: .3em;
+    margin-bottom: .4em;
+}
+section#desc > section > ul > li > span {
+    font-weight: 500;
+    color: #ddd;
+}
+/* section#related-anime > table > tr {
+    display: inline-block;
+    margin-bottom: 1em;
+} */
+section#character-list {
+    display: flex;
+    /* justify-content: space-around; */
+    flex-wrap: wrap;
+}
+section#character-list > #char-card {
+    position: relative;
+    display: flex;
+    border: 1px solid #2f2f2f;
+    padding: 1em 1.5em;
+    font-size: .8em;
+    background: #181818;
+    margin: 0 .6em 2em .6em;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    transition: .3s;
+}
+section#character-list > #char-card > img {
+    height: 220px;
+    transition: .3s;
+}
+section#character-list > #char-card:hover > img {
+    transform: scale(1.7);
+    -webkit-transform: scale(1.7);
+    -moz-transform: scale(1.7);
+    -ms-transform: scale(1.7);
+    -o-transform: scale(1.7);
+}
+section#character-list > #char-card > div {
+    text-align: center;
+    padding: 1em 0;
+}
+section#character-list > #char-card > div#backdrop {
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    background: rgba(219, 219, 219, 0.4);
+}
+section#character-list > #char-card:hover > div#backdrop {
+    display: flex;
+}
+section#anime-recommmendations > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+div#anime-card {
+    display: flex;
+    /* align-items: center; */
+    width: 49%;
+    background-color: #505050;
+    padding: .5em;
+    border: 1px solid #222;
+    margin-bottom: 1.4em;
+}
+div#anime-card > figure {
+    display: flex;
+    align-items: center;
+    margin: 0 1.5em 0 .5em;
+}
+div#anime-card > figure > img {
+    height: 160px;
+}
+div#anime-card > div#desc {
+    padding: .5em .5em 0 0;
+}
+div#anime-card > div#desc > h1 {
+    margin-bottom: .6em;
+}
+div#anime-card > div#desc > p {
+    font-size: 1.2em;
+    margin-bottom: .5em;
+    text-align: justify;
+    overflow-x: hidden;
+    display: inline-block;
+    height: 60px;
+}
+div#char-modal {
+    background-color: skyblue;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
+
+frameset > frame {
+    overflow: hidden;
+}
+
+/* Bottom Menu */
+section#bottom-menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    background: rgba(0,0,0,.5);
+    backdrop-filter: blur(5px);
+}
+/* Bottom Menu */ 
+section#left, section#right {
+    backdrop-filter: blur(5px);
+}
+
+h1#japan-name {
+    font-family: "Yusei Magic";
+}
+h1#romaji-name {
+    font-family: "Fujimaru";
+}
+
+section#gallery {
+    /* justify-content: space-around; */
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+section#gallery > figure {
+    display: flex;
+    align-items: center;
+    /* background-color: #505050; */
+    padding: .5em;
+    border: 3px solid #2f2f2f;
+    margin: 0 .7em 2em;
+    max-width: 240px;
+    /* max-height: 330px; */
+    overflow: hidden;
+}
+section#gallery > figure > img {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}

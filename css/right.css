@@ -1,0 +1,32 @@
+/* Right Menu */
+body {
+    min-height: 100vh;
+    transition: .5s;
+}
+
+section#right {
+    min-height: 100vh;
+    background-image: url("../images/index-bg.webp");
+    background-size: auto;
+    background-position-y: 60%;
+    background-position-x: -40%;
+    transition: .5s;
+}
+section#right > div#backdrop {
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.4);
+    backdrop-filter: blur(1px);
+}
+body:hover > section#right,
+body:focus > section#right {
+    transform: scale(1.3);
+    backdrop-filter: blur(10px);
+}
+img#sparkle {
+    min-height: 100vh;
+}

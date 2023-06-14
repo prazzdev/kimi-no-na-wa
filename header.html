@@ -1,0 +1,46 @@
+<html>
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <title>Header</title>
+</head>
+<body>
+    <section id="header" class="Fujimaru-font">
+        <h1 id="knnw-head">This is <span id="knnw">KIMI NO NA WA</span></h1>
+        <span id="date"></span>
+        <div id="backdrop"></div>
+    </section>
+    <script>
+        setInterval(() => {
+            const getDate = new Date()
+            const getYear = getDate.toLocaleTimeString()
+            const obj = document.getElementById("date")
+            obj.innerHTML = getYear
+        },1000)
+    </script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script>
+        let app = document.getElementById('knnw');
+
+        let typewriter = new Typewriter(app, {
+        loop: true,
+        delay: 75,
+        // cursor: " ⋆"
+        });
+
+        typewriter
+        // .pauseFor(2500)
+        .typeString('君の名は')
+        .pauseFor(1000)
+        .deleteAll(100)
+        .typeString('KIMI NO NA WA')
+        .pauseFor(1000)
+        .deleteAll(50)
+        .typeString('Your Name')
+        .pauseFor(1000)
+        .deleteAll(500)
+        .start();
+    </script>
+</body>
+</html>
+    
